@@ -12,15 +12,12 @@ import { CoursesService } from './courses.service';
         </ul>
     `
 })
-
 // register this created component in a module
-
 export class CoursesComponent {
     title = "List of courses";
     courses;
     
-    constructor() {
-        let service = new CoursesService();
+    constructor(service: CoursesService) {                  // Dependency Injection
         this.courses = service.getCourses();
     }
 }
