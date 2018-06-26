@@ -6,7 +6,9 @@ import { Component } from "@angular/core";
     template: `
         <h2>{{ title }}</h2>
         <ul>
-            <li *ngFor=""></li>  
+            <li *ngFor="let course of courses">
+                {{ course }}
+            </li>  
         </ul>
     `
 })
@@ -15,8 +17,8 @@ import { Component } from "@angular/core";
 
 export class CoursesComponent {
     title = "List of courses";
-    courses = ["course1", "course2", "course3"];
-
+    courses;
+    // call http end-point to call the list of courses
     getTitle () {
         return this.title;
     }
